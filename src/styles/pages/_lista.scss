@@ -1,0 +1,148 @@
+%btn-secondary {
+    cursor: pointer;
+    background: transparent;
+    @include rem('font-size', 16px);
+    color: $theme-color;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+%btn-primary {
+    cursor: pointer;
+    background: $theme-color;
+    height: 45px;
+    width: 220px;
+    border-radius: 3px;
+    @include rem('font-size', 16px);
+    color: $white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+%resetInput {
+    box-shadow: 0 0 0;
+    border: 0;
+    text-shadow: 0 0 0;
+}
+
+
+.giftlist{
+    &__title{
+        @include rem('font-size', 50px);
+        font-family: 'Lilita One', cursive;
+        color: $white;
+
+        @include mobile{
+            @include rem('font-size', 32px);
+        }
+    }
+
+    &__subtitle{
+        color: $color-titulos;
+        @include rem('font-size', 24px);
+        font-weight: 600;
+    }
+
+    &-form {
+        form{
+            .giftlisttype.chose{
+                display: none;
+            }
+
+            label{
+                display: block;
+                @include rem('font-size', 14px);
+                color: $color-textos;
+                margin-bottom: 8px;
+            }
+
+            input[type="text"]{
+                border: 1px solid $gray-600;
+                background: $white;
+                box-shadow: 0 0 0;
+                @include rem('font-size', 14px);
+                border-radius: 3px;
+                height: 40px;
+                padding: 11px 16px;
+                width: 100%;
+
+                @include mobile{
+                    padding: 10px;
+                }
+            }
+            
+            input.error{
+                border: 1px solid $red;
+            }
+            textarea{
+                border: 1px solid $gray-600;
+                background: $white;
+                box-shadow: 0 0 0;
+                font-size: 14px;
+                border-radius: 3px;
+                height: 80px;
+                padding: 20px 16px;
+                width: 100%;
+
+            }
+
+            .obr{
+                display: none;
+            }
+
+            .msg-char-counter{
+                @include rem('font-size', 12px);
+            }
+        }
+    }
+
+
+    .l-main__content{
+        padding: 0 20px;
+    }
+
+    input[type=checkbox] {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        margin: 0 12px 0 0;
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        border-radius: 3px;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        vertical-align: sub;
+        &:checked {
+            // background-poqsition: 1.4px -54px !important;
+            // height: 18px !important;
+            // width: 18px !important;
+            @include svg( 'icon-check', 18px, 18px);
+        }
+    }
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #C4C4C4;
+        border-radius: 50%;
+        &:focus {
+            outline: 0;
+        }
+        &:checked {
+            &:after {
+                content: "";
+                width: 8px;
+                height: 8px;
+                background: $theme-color;
+                display: block;
+                margin: 4px auto;
+                border-radius: 50%;
+            }
+        }
+    }
+}

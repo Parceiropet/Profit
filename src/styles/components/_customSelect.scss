@@ -1,0 +1,57 @@
+%fakeSelect {
+    color: $black;
+    @include transition(all 250ms);
+    position: relative;
+    border: 1px solid $border-color;
+    &.active {
+        z-index: 3;
+        .fakeSelect__arrow {
+            @include transform(rotate(180deg));
+        }
+    }
+    &__title {
+        @extend %txtbox-placeholder;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 14px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        background-color: $white;
+        a {
+            display: block;
+        }
+    }
+    &__arrow {
+        @include sprite-background('arrow-down');
+        @include transform(rotate(0deg));
+        @include transition(all 250ms);
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    &__list {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 40px;
+        cursor: pointer;
+        @include box-shadow(0px 2px 5px 0px rgba(0, 0, 0, 0.3));
+        background-color: $white;
+    }
+    &__item {
+        @extend %txtbox-placeholder;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        display: block;
+        padding: 0 20px;
+        @include transition(all 250ms);
+        text-transform: uppercase;
+        background-color: $white;
+        &:hover {
+            background-color: $sand;
+        }
+    }
+}

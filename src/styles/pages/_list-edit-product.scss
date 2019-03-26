@@ -1,0 +1,438 @@
+.giftlist-edit-products {
+    .l-main {
+        background-color: #f2f2f2;
+    }
+
+    .l-main__content {
+        padding: 0 !important;
+    }
+
+    .list-products__table {
+        // margin: 60px 0;
+    }
+
+    .giftlistinfo {
+        &-description {
+            @include rem( 'font-size', 50px);
+            font-family: 'Lilita One', cursive;
+            color: $white;
+            text-align: center;
+
+            &:before {
+                content: 'Lista da ONG ';
+                padding-right: 10px;
+            }
+            @include mobile {
+                 @include rem( 'font-size', 32px);
+                line-height: 40px;
+            }
+        }
+
+        &-actions {
+            background: url('/arquivos/list-dit-bkg.png') no-repeat;
+            background-size: cover;
+            height: 186px;
+            @include display-flex;
+            @include align-items(center);
+            @include justify-content(center);
+            @include mobile {
+                padding: 20%;
+                height: 234px;
+                flex-direction: column;
+                -webkit-flex-direction: column;
+                justify-content: flex-end;
+                -webkit-justify-content: flex-end;
+                background-size: 100%;
+                background: url('/arquivos/list-dit-mobile-bkg.png') no-repeat;
+            }
+
+            .list-action {
+                .action-buy,
+                .action-edit,
+                .action-share {
+                    display: none;
+                }
+
+                .action-view {
+                    margin-left: 40px;
+
+                    a {
+                        // display: none;
+                        color: $white;
+                        @include rem( 'font-size', 10px);
+                        font-weight: bold;
+                        text-align: center;
+                        text-transform: uppercase;
+                        background: $theme-color;
+                        border-radius: 3px;
+                        padding: 10.5px;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            opacity: 0.9;
+                            transition: all 0.5s;
+                        }
+                        @include mobile {
+                            padding: 15px 22px;
+                            @include rem( 'font-size', 12px);
+                        }
+                    }
+                    @include mobile {
+                        width: 112px;
+                        text-align: center;
+                        margin-top: 22px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        #glmsg,
+        &-image,
+        &-link,
+        &-members,
+        &-title,
+        .giftlistinfo-message,
+        label[for="glmsg"] {
+            display: none;
+        }
+    }
+
+    .giftlistproductsv2 {
+        width: 100%;
+        margin: 60px 0;
+        // css for change layout table
+        display: block;
+
+        @include mobile {
+            margin: 10px 0;
+        }
+
+        thead {
+            width: 100%;
+            display: block;
+            @include mobile {
+                display: none;
+            }
+
+            tr {
+                display: flex;
+                display: -webkit-flex;
+                display: -moz-flex;
+
+                th {
+                    &:nth-child(1) {
+                        width: 36%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 18%;
+                        text-align: center;
+                    }
+
+                    &:nth-child(3) {
+                        width: 14%;
+                    }
+
+                    &:nth-child(4) {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            display: inline-block;
+
+            tr {
+                display: flex;
+                display: -webkit-flex;
+                display: -moz-flex;
+                width: 100%;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                align-items: center;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                margin-bottom: 15px;
+                @include mobile {
+                    height: auto;
+                    flex-wrap: wrap;
+                    -webkit-flex-wrap: wrap;
+                }
+
+                td {
+                    &.image {
+                        width: 8%;
+                        @include mobile {
+                            width: 22%;
+                        }
+                    }
+
+                    &.name {
+                        width: 20%;
+                        margin-right: 4%;
+                        @include mobile {
+                            width: 48%;
+                            margin-left: 5%;
+                        }
+                    }
+
+                    &.price {
+                        width: 10%;
+                    }
+
+                    &.purchased {
+                        width: 18%;
+                    }
+
+                    &.wished {
+                        width: 24%;
+                        display: flex;
+                        display: -webkit-flex;
+                        display: -moz-flex;
+                        justify-content: space-between;
+                        -webkit-justify-content: space-between;
+                        -moz-justify-content: space-between;
+                        align-items: center;
+                        -webkit-align-items: center;
+                        -moz-align-items: center;
+                    }
+
+                    &.actions {
+                        width: 8%;
+                        text-align: center;
+                    }
+
+                    &.checkuncheck {
+                        order: -1;
+                        width: 8%;
+                        text-align: center;
+                        @include mobile {
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+        }
+        // css for change layout table
+    }
+
+    .giftlistproductsv2-gridwrapper {
+        table {
+            th {
+                font-weight: bold;
+                line-height: normal;
+                @include rem( 'font-size', 12px);
+                text-transform: uppercase;
+                color: $color-textos;
+                text-align: center;
+                padding: 17px 0;
+
+                &:nth-child(1) {
+                    text-align: left;
+                    padding-left: 20px;
+                }
+
+                &:nth-child(3) {
+                    padding-right: 0;
+                    text-align: right;
+
+                    &:after {
+                        content: "/";
+                    }
+                }
+
+                &:nth-child(4) {
+                    padding-left: 0;
+                    text-align: left;
+                }
+
+                &:nth-child(5) {
+                    display: none;
+                }
+
+                &:nth-child(6) {
+                    display: none;
+                }
+            }
+
+            tbody {
+                width: 100%;
+
+                tr {
+                    width: 100%;
+                    height: 113px;
+                    border-radius: 5px;
+                    background-color: $white;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.15);
+                    @include mobile {
+                        height: 311px;
+                    }
+
+                    td {
+                        vertical-align: middle;
+
+                        &.purchased {
+                            padding-right: 0;
+                            text-align: right;
+                            @include rem( 'font-size', 14px);
+                            color: $color-textos;
+
+                            &:after {
+                                content: "/";
+                                padding-left: 10px;
+                            }
+                            @include mobile {
+                                width: 58%;
+                                margin-left: 15px;
+                                text-align: left;
+                                @include rem( 'font-size', 14px);
+
+                                &:before {
+                                    content: 'COMPRADOS/DESEJADOS: ';
+                                    font-weight: bold;
+                                    @include rem( 'font-size', 12px);
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+
+                        &.wished {
+                            padding-left: 0;
+
+                            .giftlistsku-input-wishedamt {
+                                border: transparent;
+                                border-bottom: 1px solid $theme-color;
+                                background: transparent;
+                                outline: transparent;
+                                @include rem( 'font-size', 14px);
+                                text-align: center;
+                                color: $color-textos;
+
+                                &:disabled {
+                                    border: transparent;
+                                }
+                            }
+
+                            .inputedit.edit,
+                            .inputedit.save {
+                                @include rem( 'font-size', 14px);
+                                color: $theme-color;
+                                text-transform: capitalize;
+                                float: right;
+                            }
+                            @include mobile {
+                                width: calc(42% - 35px);
+                                margin-right: 15px;
+                                @include rem( 'font-size', 12px);
+                            }
+                        }
+
+                        &.name {
+                            @include rem( 'font-size', 14px);
+                            color: $color-textos;
+                            line-height: normal;
+                            height: 52px;
+                            overflow: hidden;
+                            display: flex;
+                            display: -webkit-flex;
+                            display: -moz-flex;
+                            align-items: center;
+                            -webkit-align-items: center;
+                            -moz-align-items: center;
+                        }
+
+                        &.price {
+                            font-weight: bold;
+                            line-height: normal;
+                            @include rem( 'font-size', 14px);
+                            text-align: center;
+                            color: $color-textos;
+                            @include mobile {
+                                width: 100%;
+                                text-align: left;
+                                padding-left: 15px;
+                                border-top: 1px solid $gray-600;
+                                padding-top: 25px;
+
+                                &:before {
+                                    content: 'PREÇO: ';
+                                    font-weight: bold;
+                                    @include rem( 'font-size', 12px);
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+
+                        &.actions {
+                            .deletethissku {
+                                font-size: 0;
+                                @include sprite-background( 'icon-remove');
+                                display: inline-flex;
+                                display: -webkit-inline-flex;
+                                @include align-items(flex-end);
+                                @include justify-content(center);
+                                margin: 0 20px;
+                                cursor: pointer;
+                                @include mobile {
+                                    background-image: none;
+                                    @include rem( 'font-size', 14px);
+                                    color: $theme-color;
+                                    text-transform: capitalize;
+                                }
+                            }
+                            @include mobile {
+                                text-align: center;
+                                width: 100%;
+                                border-top: 1px solid $gray-600;
+                                padding-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .ko-grid-pageLinks {
+            display: none;
+        }
+    }
+
+    #giftlistremovecheckedskus {
+        // display: none;
+        border: none;
+        margin: 0 0 50px;
+        color: $white;
+        @include rem( 'font-size', 10px);
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        background: $theme-color;
+        border-radius: 3px;
+        padding: 10.5px;
+        cursor: pointer;
+        transition: all 0.5s;
+        opacity: 1;
+
+        &:hover {
+            opacity: 0.9;
+            transition: all 0.5s;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        @include mobile {
+            width: 90%;
+            margin: 0 5% 50px;
+            padding: 15px 22px;
+            @include rem( 'font-size', 12px);
+        }
+    }
+}

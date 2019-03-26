@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+
+<head>
+    <vtex:template id="PARCEIROPET - includes-header" />
+</head>
+
+<body>
+    <div class="l-wrapper">
+        <!-- subtemplate header -->
+        <vtex:template id="PARCEIROPET - header" />
+
+        <!-- subtemplate header -->
+
+        <main role="main" class="l-main">
+            <div class="list-manage__content">
+                <div class="l-main__content u-center">
+                    <h1 class="giftlist__title">Gerencie sua lista</h1>
+                    <div class="list-manage__table">
+                        <vtex.cmc:GiftListManagerV2 />
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- page-main -->
+
+        <div class="c-both"></div>
+
+        <!-- subtemplate footer -->
+        <script src="/arquivos/vtex-smartResearch.min.js" type="text/javascript"></script>
+        <vtex:template id="PARCEIROPET - footer" />
+        <!-- subtemplate footer -->
+
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- scripts -->
+    <vtex:template id="PARCEIROPET - includes-scripts" />
+    <script src="/files/tags-catalog.js" async="true"></script>
+    <!-- scripts -->
+</body>
+
+</html>

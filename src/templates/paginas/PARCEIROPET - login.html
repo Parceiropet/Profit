@@ -1,0 +1,44 @@
+<!--
+ *
+ * Desenvolvido por Integrando.se
+ * hello@integrando.se
+ *
+ * Bootstrap v.3
+ *
+ -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="en-us">
+
+<head>
+    <vtex:template id="PARCEIROPET - includes-header" />
+</head>
+
+<body>
+    <div class="l-wrapper">
+        <!-- subtemplate header -->
+        <vtex:template id="PARCEIROPET - header"/>
+
+        <!-- subtemplate header -->
+
+
+        <div id="login-extra-top"></div>
+
+        <section id="login-content" class="container">
+    		<vtex.cmc:userLogin/>
+        </section><!-- #content -->
+
+        <div id="login-extra-bottom"></div>
+
+        <!-- subtemplate footer -->
+            <vtex:template id="PARCEIROPET - footer" />
+            <!-- subtemplate footer -->
+
+    </div><!-- page-wrapper -->
+
+    <!-- scripts -->
+    <vtex:template id="PARCEIROPET - includes-scripts" />
+    <!-- scripts -->
+</body>
+<vtex:template id="commonScripts" />
+</html>

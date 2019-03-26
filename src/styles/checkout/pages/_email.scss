@@ -1,0 +1,104 @@
+body{
+  background: $background-checkout;
+
+  .pre-email{
+    background: $background-checkout;
+  }
+  .client-pre-email{
+      background: $background-checkout;
+      border-top: 0;
+      border-top: 1px solid $gray-100;
+
+      .link-cart {
+          margin: 15px 0 0;
+          a{
+            font-size: 14px;
+            font-family: Lato;
+            color: $color-titulos;
+          }
+      }
+
+      .client-pre-email-h label {
+          @extend %texto-escuro;
+          margin: 5% 0 26px;
+
+          span, small{
+              @extend %texto-escuro;
+              @include rem('font-size', 24px);
+                  font-size: 24px;
+                  font-family: Lato;
+                  color: $color-textos;
+                  display: block;
+          }
+      }
+
+      .client-email {
+        width: 45%;
+        margin-left: 28%;
+
+        input {
+          font-size: 15px;
+          height: 47px;
+          padding: 0 20px;
+        }
+
+        #btn-client-pre-email{
+          background: #2EBCCF;
+          font-size: 14px;
+          font-family: Lato;
+          text-transform: uppercase;
+          border-radius: 0;
+        }
+      }
+
+      .btn-success {
+          height: 45px;
+          font-size: 13px;
+          right: 1px;
+          top: 1px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          padding: 0 27px;
+      }
+
+      .emailInfo{
+          display: none;
+      }
+  }
+}
+
+@include mobile {
+body{
+  .pre-email,
+  .client-pre-email{
+    background: white;
+
+      .client-email{
+        margin-left: 1% !important;
+
+        #client-pre-email{
+          width: 80% !important;
+        }
+        .btn-success{
+            width: 80%;
+            margin-top: 10px;
+            margin-left: 2%;
+        }
+      }
+      .client-pre-email-h label{
+            margin: 20% 0 40px !important;
+            width: 95%;
+
+            span {
+                font-size: 20px !important;
+                line-height: 30px !important;
+                margin-left: 8%;
+            }
+            small{
+                font-size: 17px !important;
+                margin-top: 10px !important;
+                margin-left: 8%;
+            }
+        }
+  }}
+}

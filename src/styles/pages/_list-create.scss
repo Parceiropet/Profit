@@ -1,0 +1,459 @@
+.giftlist-create,
+.giftlist-edit {
+
+    .list-create__content{
+        background: url('/arquivos/banner-lista-create.png') no-repeat;
+        padding: 73px 0 48px;
+        background-size: cover;
+        background-attachment: fixed;
+
+        @include mobile{
+            background: url('/arquivos/banner-lista-create-mobile.png') no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            padding-bottom: 270px;
+
+            &:after{
+                content: "";
+                background: linear-gradient(#DAEEF6, rgba(255, 255, 255, 0));
+            }
+        }
+    }
+
+    .list-create__form{
+        .giftlist-form{
+            margin-top: 32px;
+            max-width: 700px;
+            .giftlisterror{
+                border: 1px solid $red;
+            }
+            #giftlistname{
+                &.error{
+                    border: 1px solid $red;
+                }
+            }
+            .giftlistul{
+                li{
+                    margin-bottom: 18px;
+
+                    &.visibility{
+                        display: none;
+                    }
+                }
+            }
+
+            .basic{
+                .giftlisttype.fixed{
+                    display: none;
+                }
+
+                li.giftlistname,
+                li.giftlisturl {
+                    width: 49%;
+                    float: left;
+
+                    .url-site {
+                        display: none;
+                    }
+                }
+
+                .giftlistname {
+                    padding-right: 10px;
+                }
+
+                .giftlisturl {
+                    padding-left: 10px;
+                }
+
+                @include mobile{
+                    li.giftlistname,
+                    li.giftlisturl {
+                        width: 100%;
+                        padding: 0;
+                    }
+
+                }
+
+
+            }
+
+            .address{
+                h2{
+                    color: $color-titulos;
+                    @include rem('font-size', 24px);
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                    display: block;
+                }
+
+                .address-book{
+                    &-title{
+                        display: none;
+                    }
+
+                    .address-form{
+                        h4{
+                            display: none;
+                        }
+
+                        > .cancel-address-form{
+                            display: none;
+                        }
+
+
+                        .address-form-new{
+                            p.ship-postal-code{
+                                margin-bottom: 18px;
+
+                                input{
+                                    width: 30%;
+                                    margin-right: 20px;
+                                }
+
+                                small{
+                                    #dont-know-postal-code {
+                                        color: $color-link;
+                                    }
+                                }
+
+                                @include mobile{
+                                    input{
+                                        width: 50%;
+                                    }
+                                }
+                            }
+
+                            .box-delivery{
+                                p{
+                                    display: inline-block;
+                                    padding-right: 20px;
+                                    vertical-align: top;
+
+                                    &.ship-street{
+                                        width: 40%;
+                                        margin-bottom: 18px;
+
+                                        @include mobile{
+                                            width: 80%;
+                                        }
+
+                                    }
+
+                                    &.ship-number{
+                                        width: 20%;
+
+                                        @include mobile{
+                                            padding-right: 0;
+                                        }
+                                    }
+
+                                    &.ship-more-info,
+                                    &.ship-reference{
+                                        width: 20%;
+
+                                        @include mobile{
+                                            width: 50%;
+                                            margin-bottom: 18px;
+                                        }
+                                    }
+
+                                    &.ship-reference,
+                                    &.ship-state-alternate,
+                                    &.ship-name {
+                                        padding-right: 0;
+
+                                    }
+
+                                    &.ship-neighborhood,
+                                    &.ship-city,
+                                    &.ship-state-alternate{
+                                        width: 33.33%;
+                                        margin-bottom: 18px;
+                                    }
+
+                                    @include mobile {
+                                        &.ship-neighborhood {
+                                            width: 50%;
+                                        }
+                                        &.ship-city {
+                                            width: 50%;
+                                            padding-right: 0;
+                                        }
+                                        &.ship-state-alternate {
+                                            padding-right: 20px;
+                                            width: calc(100% - 150px);
+                                        }
+                                    }
+
+
+                                    &.ship-state{
+                                        display: none;
+                                    }
+
+                                    &.ship-commercial{
+                                        margin-top: 25px;
+                                        width: 30%;
+
+                                        @include mobile{
+                                            width: auto;
+                                            max-width: 150px;
+                                            padding-right: 0;
+                                        }
+                                    }
+
+                                    &.ship-name{
+                                        width: 70%;
+
+                                        @include mobile{
+                                            width: 100%;
+                                        }
+                                    }
+
+                                    label{
+                                        white-space: nowrap;
+                                    }
+
+                                    .help{
+                                        @include rem('font-size', 12px);
+
+                                        &.error{
+                                            color: $red;
+                                            margin-top: 10px;
+                                            display: block !important;
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            .cancel-address-form{
+                                display: inline-block;
+                            }
+
+
+                            .submit{
+                                margin-top: 20px;
+                                display: inline-block;
+                            }
+
+                            @include mobile {
+
+                                .cancel-address-form {
+                                    width: 40%;
+                                }
+
+                                .submit{
+                                    width: 50%;
+
+                                    button{
+                                        width: 100%;
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+
+                    &-body{
+                        .address-list{
+                            h4,
+                            .text-box-selected{
+
+                                display: none;
+                            }
+
+                            .link{
+                                a{
+                                    color: $color-link;
+                                    line-height: 20px;
+                                }
+                            }
+
+                            .address-item{
+                                label{
+                                    display: inline-block;
+                                    margin-left: 10px;
+                                    line-height: 20px;
+                                    vertical-align: middle;
+                                }
+
+                                @include mobile{
+                                    label{
+                                        width: calc(100% - 40px);
+                                    }
+                                }
+                            }
+
+                            .link-box-select{
+                                display: none;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+            .image{
+                .imageupload,
+                .imageview {
+                    label {
+                        width: 340px;
+                        margin-right: 20px;
+
+                        &:not([for="giftlistimageload"]) {
+                            display: inline-block;
+                            &:after {
+                                content: "Escolher imagem";
+                                @include rem('font-size', 16px);
+                                @extend %btn-secondary;
+                                display: block;
+                                width: 100%;
+                                border: 2px solid $theme-color;
+                                height: 45px;
+                                line-height: 40px;
+                                margin-top: 12px;
+                            }
+                        }
+                    }
+
+                    .photo {
+                        display: inline-block;
+                        width: calc(100% - 370px);
+
+                        input[type="file"] {
+                            visibility: hidden;
+                        }
+
+                        input[type="button"]#giftlistupload {
+                            @extend %btn-primary;
+                            height: 45px;
+                            width: 100%;
+                            max-width: 220px;
+                        }
+
+                        input[type="button"]#giftlistremoveimage{
+                            @extend %btn-secondary;
+                            border: 2px solid $theme-color;
+                            height: 45px;
+                            line-height: 40px;
+                            margin-top: 12px;
+                        }
+
+                        img {
+                            width: 100%;
+                            max-width: 200px;
+                        }
+                    }
+                }
+
+                @include mobile{
+                    .imageupload,
+                    .imageview {
+
+                        label {
+                            width: 100%;
+                        }
+
+                        .photo {
+                            width: 100%;
+
+                            input[type="button"] {
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .therms-area{
+                position: relative;
+                margin-top: 24px;
+                padding: 15px 20px;
+                background: #828282;
+                color: $white;
+                margin-bottom: 64px;
+                border-radius: 3px;
+
+                h2{
+                    margin-bottom: 18px;
+                }
+
+                .therms-accept{
+                    position: absolute;
+                    bottom: -31px;
+                    left: 0;
+
+
+                    label{
+                        display: inline-block;
+                    }
+                }
+
+            }
+
+            .action-area{
+                text-align: right;
+                border-top: 1px solid #C4C4C4;
+                padding-top: 30px;
+                margin-top: 30px;
+
+                // ul
+                .form-action{
+                    li{
+                        display: inline-block;
+                    }
+
+                    @include mobile{
+                        @include display-flex;
+                        @include flex-direction(column);
+
+                        li{
+                            display: block;
+
+                            &.cancel{
+                                order: 1;
+                                margin-top: 28px;
+                            }
+
+                            input{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            div.errormessage{
+                margin-bottom: 20px;
+
+                .giftlist-save-error{
+                    padding: 16px;
+                    background: $red-50;
+                    border-radius: 3px;
+                    color: $white;
+                }
+
+            }
+
+            button,
+            input.giftlistv2save{
+                @extend %resetInput;
+                @extend %btn-primary;
+            }
+
+            input.giftlistv2cancel,
+            .cancel-address-form a{
+                @extend %resetInput;
+                @extend %btn-secondary;
+                margin-right: 30px;
+								@include mobile {
+									margin-right: auto;
+								}
+            }
+        }
+    }
+}

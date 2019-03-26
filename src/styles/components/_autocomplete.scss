@@ -1,0 +1,61 @@
+// Autocomplete
+
+.ui-autocomplete {
+    position: fixed !important;
+    background: $white;
+    z-index: 999999 !important;
+    display: block;
+    top: 83px !important;
+    padding: 10px 0;
+    width: 460px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+
+    .floating-menu & {
+        display: none !important;
+    }
+
+    .ui-menu-item {
+        display: block;
+        padding: 0 10px;
+
+        .ui-corner-all {
+            position: relative;
+
+            img {
+                float: left;
+                margin: 0px 18px 0px 0px;
+            }
+        }
+
+        &:last-of-type {
+            a {
+                border-bottom: 0;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+            @include rem( 'font-size', 14px);
+            line-height: 20px;
+            color: $gray;
+            @include transition(color 300ms ease);
+            white-space: nowrap;
+            width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &:hover {
+                // color: $sushi;
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        top: 60px !important;
+        border-radius: 0px;
+        left: 0 !important;
+        width: 100% !important;
+    }
+}

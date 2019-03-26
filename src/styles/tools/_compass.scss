@@ -1,0 +1,17 @@
+// Mixins Compass
+
+@mixin justify-content($justify-content) {
+  @include flexbox((justify-content: $justify-content));
+}
+
+@mixin align-items($align-items) {
+  @include flexbox((align-items: $align-items));
+}
+
+@mixin display-flex($display: flex) {
+  @include flexbox((display: $display));
+}
+
+@mixin flex-direction($direction) {
+  @include flexbox((flex-direction: $direction));
+}

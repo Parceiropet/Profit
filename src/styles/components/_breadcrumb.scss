@@ -1,0 +1,119 @@
+.bread-crumb {
+    .title-category,
+    .title-department {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+
+        li {
+            // @include rem( 'font-size', 14px);
+            color: #C4C4C4;
+
+            a {
+                @include rem( 'font-size', 14px);
+            }
+
+            &:first-child {
+                margin-right: -4px;
+                a {
+                    font-size: 0px;
+                    &:after {
+                      content: 'Home';
+                      @include rem( 'font-size', 14px);
+                    }
+                }
+
+
+                &:before {
+                    content: '';
+                    padding: 0;
+                }
+            }
+
+            &:before {
+                content: '-';
+                padding: 0 4px;
+            }
+
+            &:last-child {
+                a {
+                    padding: 0 15px;
+
+                    &:first-child {
+                        padding: 0;
+                    }
+
+                    &:before {
+                        content: '';
+                        @include sprite-background( 'icon-prev-bread-crumb');
+                        position: absolute;
+                        left: 15px;
+                        top: 18px;
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        padding-left: 20px;
+
+        &.u-center {
+            padding: 15px 20px;
+            position: relative;
+        }
+
+        ul {
+            padding-left: 5px;
+            display: block;
+            width: 100%;
+
+            li {
+                display: inline-block;
+
+                &:last-child {
+                    a {
+                        &:before {
+                            // left: 0px;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    a {
+                        font-size: 0;
+                    }
+                }
+            }
+        }
+    }
+    @include desktop {
+        padding-top: 16px;
+            &.u-center{
+                padding-top: 0px;
+            }
+
+        ul {
+            li {
+                &:first-child {
+                    a {
+                        // font-size: 0;
+                        // display: none;
+                    }
+                }
+
+                &:last-child {
+                    a {
+                        &:before {
+                            content: '';
+                            background-image: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

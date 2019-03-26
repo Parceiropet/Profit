@@ -1,0 +1,615 @@
+//Variáveis Vtex
+$mid-gray: #555;
+$black-70: #000;
+$heavier-blue: #0070D1;
+$near-white: #F2F2F2;
+
+//Variávies Profite
+$pftx-gray-light: #BDBDBD;
+$pftx-gray: #EEE;
+
+
+
+
+
+
+// **************************
+// **************************
+//  Início da Área Editável
+// **************************
+// **************************
+
+//Cor Principal
+$myorders--theme-color: $theme-color;
+
+// Fonte
+$myorders--font-regular: $theme-font;
+$myorders--font-light: $theme-font;
+$myorders--font-bold: $theme-font;
+
+//Cor do Fundo
+$myorders--bg-color: #eee;
+
+//Borda Arredondada
+$myorders--border-radius: 3px;
+
+//Cores dos status
+$myorders--pedido-cancelado: #ff725c;
+$myorders--pedido-realizado: #fbf1a9;
+$myorders--pedido-aprovado: #96ccff;
+//$myorders--pedido-enviado: inherit;
+//$myorders--pedido-a-caminho: inherit;
+//$myorders--pedido-concluido: inherit;
+
+//Header card color
+$myorders--header-card-color: #fff; // Quando o body tiver fundo colorido
+//$myorders--header-card-color: $pftx-gray; // Quando o body tiver fundo branco
+
+// Breakpoint mobile
+$max-width-mobile:767px; // 767px
+
+// Breakpoint Desktop
+$max-width:1320px; // 1320px
+
+
+
+// **************************
+// **************************
+//  Fim da Área Editável
+// **************************
+// **************************
+
+
+
+
+
+
+$bg-header: $myorders--header-card-color;
+$border-color: $pftx-gray;
+$btn-color: $myorders--theme-color;
+
+.tabs__item.orders{
+    //background-color: $myorders--bg-color;
+}
+body.account{
+
+    //Fontes
+    .f{
+
+        //Pesos
+        &w{
+            &4{
+              font-family: $myorders--font-regular;
+              font-weight: normal;
+            }
+            &5{
+              font-family: $myorders--font-regular;
+              font-weight: normal;
+            }
+            &6{
+              font-family: $myorders--font-regular;
+              font-weight: bold;
+            }
+        }
+
+        // Tamanhos
+        &3{
+            @include rem('font-size',24px);
+        }
+        &5{
+            @include rem('font-size',16px);
+        }
+        &6{
+            @include rem('font-size',14px);
+        }
+        &7{
+            @include rem('font-size',12px);
+        }
+
+    }
+
+    //Cores
+    .mid-gray{
+        color: $mid-gray;
+    }
+    .black-70{
+        color: $black-70;
+    }
+    .heavier-blue{
+        color: $myorders--theme-color;
+    }
+    // backgrounds
+    .bg-near-white{
+          background-color: $bg-header;
+    }
+
+    // Status do Pedido
+    .myo-order-header,
+    .myo-summary-header,
+    #my-orders-container [data-reactroot]>div:last-child>h2+.mb0,
+    time{
+        //Pedido Cancelado
+        .bg-light-red{
+            background-color: $myorders--pedido-cancelado;
+        }
+        //Processando pagamento
+        .bg-light-yellow{
+            background-color: $myorders--pedido-realizado;
+        }
+        //Pagamento aprovado
+        .bg-light-blue{
+            background-color: $myorders--pedido-aprovado;
+        }
+
+        [class*="br"]{
+            @include border-radius($myorders--border-radius);
+        }
+
+    }
+
+
+
+
+    .tabs{
+        // max-width: $max-width;
+    }
+
+    .myo-order{
+        &-header{
+            border-bottom: 1px solid #e0e0e0;
+            padding: 5px 10px;
+            margin-bottom: 3px;
+            @include border-radius($myorders--border-radius);
+            .w-50{
+                width: 100%;
+                span{
+                    font-size: 18px;
+                    color: #666;
+                    font-weight: 300;
+                    font-family: Lato;
+                    &:nth-child(2){
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .f7{
+                line-height: 22px;
+                display: inline-block;
+                width: initial;
+                font-size: 11px;
+                line-height: 22px;
+                display: inline-block;
+                width: initial;
+                font-weight: 900;
+                &[class*="bg-"]{
+                    line-height: 12px;
+                }
+            }
+            .fw5{
+                display: inline-block;
+                &[class*="bg-"]{
+                    line-height: 12px;
+                    font-weight: normal;
+                    @include border-radius($myorders--border-radius);
+                }
+            }
+            > div{
+                &:nth-child(3){
+                    a svg path{
+                        fill: $myorders--theme-color;
+                    }
+                }
+            }
+            &+.pa3{
+                padding: 24px;
+                @include border-radius($myorders--border-radius);
+            }
+
+        }
+        &-card{
+            border: 0px;
+            @include border-radius(0);
+        }
+        &-product{
+            h4{
+                min-height: 30px;
+            }
+            > div:nth-child(2){
+                padding-left: 25px;
+            }
+        }
+    }
+
+    .myo-reorder-btn,
+    .myo-details-btn{
+        line-height: 24px;
+    }
+    .myo-cancel-btn{
+        background-color: transparent;
+        border: 1px solid $btn-color;
+        color: $btn-color;
+        text-transform: uppercase;
+        margin-top: 13px;
+        @include border-radius($myorders--border-radius);
+        &:hover{
+            background-color: transparent;
+        }
+    }
+
+    [role="tabpanel"]{
+        float: right;
+        margin: 15px 0;
+        display: none;
+
+        button{
+            background: transparent;
+            border: 0;
+            padding: 0;
+            font-size: 12px;
+            min-width: 105px;
+            display: inline-block;
+            cursor: pointer;
+            color: $black-70;
+
+            &:nth-child(1){
+                border-right: 1px solid $black-70;
+                padding-right: 10px;
+                margin-right: 10px;
+            }
+
+            &[aria-pressed="true"]{
+              color: $myorders--theme-color !important;
+              font-weight: bold;
+            }
+
+            &:hover{
+                background: transparent;
+            }
+        }
+
+        + .ph0 {
+            display: inline-block;
+            width: 100%;
+
+            > .w-70{
+                width: 100%;
+                border: 0;
+                @include border-radius($myorders--border-radius);
+                & > .f4{
+                    font-size: 20px;
+                }
+            }
+        }
+
+    }
+
+    .myo-workflow{
+        li{
+            line-height: 25px;
+        }
+    }
+
+    #my-orders-container{
+        color: $mid-gray;
+        border: 1px solid #e0e0e0;
+
+        [data-reactroot]{
+            padding: 20px 30px 0;
+            display: inline-block !important;
+            width: 100%;
+            border: 1px solid $border-color;
+            @include border-radius($myorders--border-radius);
+            background: #fff;
+            font-family: $myorders--font-regular;
+            &[class]{
+              padding: 0;
+              border: 0;
+              //background: $myorders--bg-color;
+              font-family: $myorders--font-regular;
+            }
+
+            > a{
+                text-transform: capitalize;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+                margin-bottom: 5px;
+                path{
+                    fill: $myorders--theme-color;
+                }
+                &+div{
+                    time{
+                        .dib{
+                            margin-left: 25px;
+                        }
+                    }
+                    // buttons container
+                    &+div{
+                      path{
+                        fill: $myorders--theme-color;
+                      }
+                      a{
+                        color: $myorders--theme-color;
+                      }
+                    }
+                }
+            }
+
+            // Lista de Produtos
+            > div:last-child{
+                > h2{
+                    margin-bottom: 15px;
+                    & + .mb0{
+                        .dib{
+                            margin-left: 25px !important;
+                        }
+                    }
+                }
+                table{
+                    th{
+                        padding-bottom: 15px;
+                        &:first-child{
+                            width: 60%;
+                        }
+                        &.w-20 {
+                          width: 15%;
+                        }
+                    }
+                    td{
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+        .f3{
+            line-height: 55px;
+        }
+        .overflow-y-scroll {
+            overflow-y: visible;
+            border:0;
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            padding: 40px 16px 10px;
+            h3{
+                margin-top: 0;
+                margin-bottom: 20px;
+                letter-spacing: 1px;
+            }
+            .mt3{
+                margin-top: 0;
+            }
+            hr{
+                display: none !important;
+            }
+            .cf{
+                margin-bottom: 7px;
+            }
+        }
+        .h4-plus{
+            height: 270px;
+        }
+
+    }
+
+    .myo-product-row{
+        .fl{
+            width: 60%;
+
+            .f6{
+                color: $myorders--theme-color;
+                font-size: 13px;
+            }
+        }
+        img.fl{
+          width: 92px;
+        }
+    }
+
+}
+
+@media (max-width: $max-width-mobile) {
+    body.account{
+        .myo-order-header{
+            padding: 10px 15px;
+            .fw5{
+                &[class*="bg-"]{
+                    width: 100%;
+                }
+            }
+            > div{
+                &:nth-child(3){
+                    width: 100%;
+                }
+                &:nth-child(4){
+                    width: 100%;
+                    .tr{
+                      text-align: left;
+                    }
+                }
+            }
+            &+.pa3{
+                padding: 15px;
+            }
+        }
+
+
+        .myo-order-card{
+            border: 1px solid $border-color;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+
+        #my-orders-container{
+            [data-reactroot] {
+                padding: 0px;
+                >a{
+                    margin: 15px 15px 0;
+                    & +div{
+                        time{
+                            .dib{
+                                margin-left: 0px
+                            }
+                        }
+                        &+div{
+                          ul{
+                            margin: 0;
+                          }
+                        }
+
+                    }
+                }
+                >div{
+                    padding: 30px 15px;
+                    &:nth-child(1){
+                        padding-top: 15px;
+                    }
+                    &:nth-child(3){
+                        padding: 0 15px;
+                    }
+                    &:last-child{
+                        padding-bottom: 0;
+                    }
+                }
+                &[class]{
+                  > div{
+                      padding:0!important;
+                  }
+                }
+                > a{
+                    &+div+div{
+                        ul{
+                            margin: 0;
+
+                            li{
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+                // Lista de Produtos
+                > div:last-child{
+                    > h2{
+                        & + .mb0{
+                                .dib{
+                                    margin-top: 10px;
+                                    margin-left: 0px !important;
+                                    display: block;
+                                    width: auto;
+                                    text-align: center;
+                                }
+                        }
+                    }
+
+                    table{
+                        thead{
+                            display: none;
+                        }
+                        tr{
+                            display: inline-block;
+                            width: 100%;
+                        }
+                        td{
+                            display: block;
+
+
+                            &:before{
+                                font-size: 12px;
+                                text-transform: uppercase;
+                                color: $pftx-gray-light;
+                                display: block;
+                            }
+
+                            //Foto e imagem
+                            &:nth-child(1){
+                                padding-bottom: 0;
+                                width: 100%;
+                                border: 0px;
+                                img{
+                                    width: 30%;
+                                    height: auto;
+                                    margin-right: 6.33%;
+                                }
+                                p{
+                                    line-height: 18px;
+                                }
+                            }
+                            // Preço unitário
+                            &:nth-child(2){
+                                width: 30%;
+                                margin-right: 6.33%;
+                                float: left;
+
+                                &:before{
+                                    content: 'Pre\00E7 o';
+                                }
+                            }
+                            // Quantidade
+                            &:nth-child(3){
+                                width: 28%;
+                                margin-right: 7.33%;
+                                float: left;
+
+                                &:before{
+                                    content: 'Quantidade';
+                                }
+                            }
+                            // Preço total
+                            &:nth-child(4){
+                                width: 27%;
+                                float: left;
+
+                                &:before{
+                                    content: 'Subtotal';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .f3{
+                line-height: 25px;
+                margin: 12px 0;
+            }
+            time{
+                > div{
+                    margin-top: 15px;
+                    width: 100%;
+                }
+            }
+            .myo-workflow{
+                padding-bottom: 10px;
+                & + .w-third-ns{
+                  border-top: 1px solid $border-color;
+                }
+            }
+            .w-third-ns{
+                margin-bottom: 0;
+                padding: 40px 0;
+                border-bottom: 1px solid $border-color;
+                section{
+                    padding: 0;
+                }
+            }
+            .h4-plus{
+                height: auto;
+                border: 0;
+            }
+
+            .pv4{
+                h2{
+
+                }
+                .mb0{
+
+                }
+            }
+        }
+        .myo-workflow{
+            li{
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,504 @@
+.institucional {
+    main {
+        // margin-top: 180px !important;
+    }
+    .main-page {
+        &__nav {
+            p {
+                @extend %texto-corrido;
+
+                strong {
+                    @extend %subtitulo-title;
+                }
+            }
+        }
+
+        .contato-form-wrapper {
+            padding: 0 15px;
+
+            .submit-status {
+                clear: both;
+                margin-bottom: 20px;
+                // display: none;
+                color: $red;
+
+                &.success {
+                    color: $green;
+                    // display: block;
+                }
+            }
+
+            .grp-field {
+                label {
+                    @extend %texto-corrido;
+                    text-align: left;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+
+                input {
+                    width: 100%;
+                    @extend %input-text;
+                    @include hiddenplaceholder;
+                }
+
+                &.grp-cel,
+                &.grp-tel {
+                    .field-ddd {
+                        width: 16%;
+                        float: left;
+                        margin-right: 10px;
+                    }
+
+                    .field-tel {
+                        width: 80%;
+                        float: left;
+                    }
+                }
+
+                textarea {
+                    @extend %input-text;
+                    min-height: 160px;
+                    width: 100%;
+                    @include hiddenplaceholder;
+                }
+
+                select {
+                    @extend %input-text;
+                    background-color: $white;
+                    width: 100%;
+                    cursor: pointer;
+                }
+
+                input.bt-submit {
+                    @extend %btn-primary;
+                    height: 39px;
+                    line-height: 43px;
+                    width: 245px;
+                    border-radius: 5px;
+                    -webkit-appearance: none;
+                }
+            }
+        }
+    }
+    @include desktop {
+        .main-page {
+            // max-width: $page-width-desktop;
+            // width: 100%;
+            // margin: 0 auto;
+
+            &__nav {
+                // float: left;
+                // width: 290px;
+                width: 25%;
+                display: inline-block;
+
+                .institucional-box {
+                    background: $bg-accordion;
+                    //height: 140px;
+                    padding-bottom: 45px;
+                    margin-bottom: 20px;
+
+                    &__tel {
+                        margin-bottom: 38px;
+                        strong {
+                            &:before {
+                                content: "";
+                                @include sprite-background( 'icon-fone');
+                                clear: right;
+                                position: absolute;
+                                left: -40px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        display: none;
+                    }
+
+                    &__email:before {
+                        content: "";
+                        @include sprite-background( 'icon-mail');
+                        background-position: 0 -788px;
+                        clear: right;
+                        margin-left: -9px;
+                    }
+
+                    &__tel:before{
+                      content: "";
+                      @include sprite-background('cat-phone');
+                      clear: right;
+                      margin-left: -40px;
+                      margin-bottom: 15px;
+                    }
+
+                    p {
+                        display: inline-block;
+                        padding-left: 25px;
+                        padding-right: 10px;
+                        vertical-align: top;
+                        // @extend %texto-corrido;
+                        > strong {
+                            display: block;
+                            margin-bottom: 17px;
+                            position: relative;
+                        }
+
+                        &:nth-child(1) {
+                            width: 90%;
+                            float: right;
+                        }
+
+                        &:nth-child(2) {
+                            padding-left: 55px;
+                        }
+                    }
+
+                    a {
+                        margin: 0 auto;
+                        text-align: center;
+                        width: 80%;
+                        display: block;
+                        border-radius: 3px;
+                        color: #2EBCCF;
+                        padding: 12px 0;
+                        font-size: 14px;
+                        border: 1px solid #2EBCCF;
+                        text-transform: uppercase;
+                        &:hover {
+                            background: rgba(46, 188, 207, .1);
+                        }
+                    }
+                }
+            }
+
+            &__content {
+                // width: 840px;
+                width: 65%;
+                float: right;
+                // float: right;
+                display: inline-block;
+                margin-left: 70px;
+                margin-top: 30px;
+                // float: left;
+                font-family: $font-textos;
+                @include rem( 'font-size', 14px);
+                font-weight: 400;
+                color: $gray;
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    margin-bottom: 24px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .contato-form-wrapper {
+                padding: 0;
+
+                .grp-field {
+                    width: 47%;
+                    float: left;
+                    margin-right: 40px;
+                    margin-bottom: 20px;
+
+                    input {
+                        width: 100%;
+                    }
+
+                    &.grp-cel,
+                    &.grp-tel {
+                        .field-ddd {
+                            width: 16%;
+                            float: left;
+                            margin-right: 10px;
+                        }
+
+                        .field-tel {
+                            width: 80%;
+                            float: left;
+                        }
+                    }
+
+                    &:nth-child(2n+0) {
+                        margin-right: 0;
+                    }
+                }
+
+                .grp-msg {
+                    float: none;
+                    width: 100%;
+                    clear: both;
+                }
+            }
+        }
+    }
+    @include screen(737px, 1024px) {
+        .main-page {
+            &__nav {
+                width: 27%;
+                margin-left: 15px;
+
+                .institucional-box {
+                    height: auto;
+                    padding-bottom: 35px;
+
+                    &__email,
+                    &__tel {
+                        &:before {
+                            display: block;
+                            clear: both;
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    p {
+                        padding-left: 0;
+                        margin-bottom: 10px;
+
+                        &:nth-child(2) {
+                            padding-left: 6px;
+                        }
+
+                        strong {
+                            @include rem( 'font-size', 15px);
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    &__email:before {
+                        content: "";
+                        @include sprite-background( 'icon-mail');
+                        background-position: 0 -788px;
+                        clear: right;
+                        margin-left: -9px;
+                    }
+
+                    &__tel:before {
+                        content: "";
+                        @include sprite-background( 'cat-phone-mini');
+                        background-position: -166px -788px;
+                        clear: right;
+                        margin-left: -9px;
+                        margin-bottom: 15px;
+                    }
+
+                    &__tel:after {
+                        content: "";
+                        @include sprite-background( 'icon-fone');
+                        clear: right;
+                        position: absolute;
+                        left: 50px;
+                        margin-top: -49px;
+                    }
+
+                    p {
+                        display: inline-block;
+                        padding-left: 25px;
+                        padding-right: 10px;
+                        vertical-align: top;
+                        // @extend %texto-corrido;
+                        > strong {
+                            display: block;
+                            margin-bottom: 17px;
+                        }
+
+                        &:nth-child(1) {
+                            width: 84%;
+                            float: right;
+                        }
+                    }
+                }
+
+                a {
+                    color: #2EBCCF;
+                    font-size: 12px !important;
+                    font-family: Lato;
+                    border: 1px solid #2EBCCF;
+                    padding: 12px 20px !important;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    margin-left: 8px;
+                }
+            }
+
+            &__content {
+                width: 66%;
+                margin-left: 20px;
+            }
+
+            .contato-form-wrapper {
+                padding: 0;
+
+                h2 {
+                    display: none !important;
+                }
+
+                .grp-field {
+                    width: 47.5%;
+                    margin-bottom: 20px;
+                    margin-right: 20px;
+
+                    &.grp-cel,
+                    &.grp-tel {
+                        .field-tel {
+                            width: 75%;
+                            float: right;
+                        }
+
+                        .field-ddd {
+                            width: 20%;
+                        }
+                    }
+
+                    input.bt-submit {}
+
+                    &.grp-msg {
+                        float: none;
+                        width: 100%;
+                        clear: both;
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        .main-page {
+            // .bread-crumb {
+            //     display: none;
+            // }
+
+            &__nav {
+                height: auto;
+                ul {
+									overflow-x: hidden;
+                  &:before {
+                    content: "";
+                    @include sprite-background( 'cat-phone');
+                    right: -30px;
+                    position: relative;
+                  }
+                }
+                .institucional-box {
+                    background: #fff;
+                    //height: 140px;
+                    margin: 25px 25px 0 25px;
+                    padding: 20px 20px;
+                    overflow: hidden;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 5px;
+                    position: relative;
+                    top: -60px;
+                    background: transparent;
+                    &:nth-child(1) {
+                        display: none;
+                    }
+
+                    &__email:before {
+                        content: "";
+                        @include sprite-background( 'icon-mail');
+                        background-position: 0 -788px;
+                        margin-left: 16px;
+                    }
+                    &__tel:before {
+                        content: "";
+                        @include sprite-background( 'icon-fone');
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 10px;
+                    }
+
+                    .institucional-box__tel {
+                        p {
+                            &:nth-child(1) {
+                                width: 80%;
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-bottom: 0;
+                                strong {
+                                    font-size: 25px;
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                width: 80%;
+                                // float: right;
+                                margin-top: 10px;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: #2EBCCF;
+                        font-size: 14px;
+                        font-family: Lato;
+                        border: 1px solid #2EBCCF;
+                        padding: 12px 50px;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        margin-left: 32px;
+                        display: block;
+                        text-align: center;
+                        margin: 10px auto;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .contato-form-wrapper {
+                h2 {
+                    font-family: $font-textos;
+                    @include rem( 'font-size', 18px);
+                    font-weight: 500;
+                    color: $black;
+                    text-transform: uppercase;
+                    margin: 15px 0;
+                }
+
+                .grp-field {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    clear: both;
+                    overflow: hidden;
+                    text-align: center;
+
+                    &.grp-cel,
+                    &.grp-tel {
+                        .field-tel {
+                            width: 80%;
+                        }
+                    }
+
+                    input.bt-submit {}
+                }
+            }
+        }
+    }
+}
+
+.contato {
+    @media screen and (min-width:737px) {
+        .page-content {
+            main {
+                height: 640px;
+                .institucional
+                .main-page__nav
+                .institucional-box__tel:before {
+
+                }
+            }
+        }
+    }
+}

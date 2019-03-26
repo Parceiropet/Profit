@@ -1,0 +1,18 @@
+<svg width="28" height="29" viewBox="0 0 28 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Facebook</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(5937 -1977)">
+<g id="Facebook">
+<g id="Rectangle 44">
+<use xlink:href="#path0_fill" transform="translate(-5937 1977.42)" fill="#FFFFFF"/>
+</g>
+<g id="Blue">
+<use xlink:href="#path1_fill" transform="translate(-5925.71 1981.66)" fill="#2EBDCE"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 7C 0 3.13401 3.13401 0 7 0L 21 0C 24.866 0 28 3.13401 28 7L 28 21C 28 24.866 24.866 28 21 28L 7 28C 3.13401 28 0 24.866 0 21L 0 7Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 8.03902 23.7612L 8.03902 12.9056L 11.6669 12.9056L 12.2119 8.69409L 8.03902 8.69409L 8.03902 5.99427C 8.03902 4.77075 8.36678 3.93699 10.1215 3.93699L 12.3593 3.93765L 12.3593 0.156304C 11.9721 0.104859 10.6437 -5.12646e-07 9.09829 -5.12646e-07C 5.87178 -5.12646e-07 3.66465 1.95911 3.66465 5.57589L 3.66465 8.69409L 1.28184e-07 8.69409L 1.28184e-07 12.9056L 3.66373 12.9056L 3.66373 23.7612L 8.03902 23.7612Z"/>
+</defs>
+</svg>

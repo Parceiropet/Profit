@@ -1,0 +1,21 @@
+<svg width="37" height="52" viewBox="0 0 37 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>&#239;&#129;&#148;</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(5399 -456)">
+<g id="&#239;&#129;&#148;" filter="url(#filter0_d)">
+<use xlink:href="#path0_fill" transform="translate(-5397.09 456.106)" fill="#FFFFFF"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="-5399" y="456" width="37" height="52" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" d="M 29.6518 23.3482C 30.3214 22.6786 30.3214 21.6071 29.6518 20.9375L 9.77679 1.0625C 9.10714 0.392858 8.03571 0.392858 7.36607 1.0625L 2.91964 5.50893C 2.25 6.17857 2.25 7.25 2.91964 7.91964L 17.1429 22.1429L 2.91964 36.3661C 2.25 37.0357 2.25 38.1071 2.91964 38.7768L 7.36607 43.2232C 8.03571 43.8929 9.10714 43.8929 9.77679 43.2232L 29.6518 23.3482Z"/>
+</defs>
+</svg>

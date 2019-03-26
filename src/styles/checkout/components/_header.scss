@@ -1,0 +1,272 @@
+#header-checkout {
+  height: 100px;
+  background: #2EBCCF;
+  @include mobile{
+    height: 80px;
+  }
+
+  .header {
+    &__container {
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      height: 80px;
+    }
+
+    &__logo {
+      width: 15%;
+      @include desktop{
+        margin-right: 0px;
+      }
+      @include mobile{
+        width:142px !important;
+      }
+      float: left;
+      // margin-top: 14px;
+      a {
+        font-family: $font-textos;
+        @include rem( 'font-size', 42px);
+        font-weight: 400;
+        color: $black;
+        text-align: center;
+        text-indent: -9999px;
+        background-image: url("//parceiropet.vteximg.com.br/arquivos/logo-parceiropet.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        @include mobile{
+          background-image: url("//parceiropet.vteximg.com.br/arquivos/logo-parceiropet-mobile.png");
+        }
+        @include desktop{
+          background-size: 100%;
+        }
+        width: 100%;
+        height: 86px;
+        display: block;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__tipbar {
+      width: 80%;
+      float: left;
+      @include mobile{
+        width:130px !important;
+      }
+
+      .tipbar{
+        &__list {
+          margin: 0 auto;
+        }
+
+        &__item {
+          display: inline-block;
+          font-family: $font-textos;
+          @include rem( 'font-size', 12px);
+          font-weight: 400;
+          color: $gray-light;
+          text-align: right;
+          // margin-right: 80px;
+          // position: relative;
+          display: flex;
+          display: -webkit-flex;
+          display: -moz-flex;
+          align-items: center;
+          -webkit-align-items: center;
+          -moz-align-items: center;
+
+          span {
+            font-family: $font-textos;
+            @include rem( 'font-size', 12px);
+            font-weight: 500;
+            color: #fff;
+            display: block;
+            float: left;
+            padding-right: 20px;
+            text-transform: uppercase;
+            text-align: right;
+          }
+
+          &:after {
+            content: "";
+            // position: absolute;
+            // left: 92px;
+            // top: -5px;
+          }
+
+          &--desconto{
+            &:after{
+              content: "";
+              @include sprite-background('icon-tipbar-boleto');
+              margin-right:10px;
+            }
+          }
+          &--frete{
+            &:after{
+              content: "";
+              @include sprite-background('icon-tipbar-frete');
+              margin-right:10px;
+            }
+          }
+          &--parcelamento{
+            &:after{
+              content: "";
+              @include sprite-background('icon-tipbar-parcelamento');
+              margin-right:10px;
+            }
+          }
+          &--seguro{
+            &:after{
+              content: "";
+              @include sprite-background('icon-tipbar-seguro');
+              @include mobile{
+                display:none;
+              }
+            }
+          }
+
+          strong {
+            font-weight: 600;
+          }
+
+          // &:nth-child(2) {
+          //   &:after {
+
+          //     left: 175px;
+          //   }
+          // }
+
+          // &:nth-child(3) {
+          //   margin-right: 0;
+          //   margin-left: 13px;
+
+          //   &:after {
+
+          //     left: 120px;
+          //     top: -1px;
+          //   }
+          // }
+        }
+      }
+
+    }
+  }
+  @include screen(737px, 1024px) {
+    .header {
+      &__container {
+        padding: 0 15px;
+      }
+
+      &__tipbar {
+        ul {
+          li {
+            &:nth-child(2) {
+              margin-right: 0;
+            }
+
+            &:nth-child(3) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include desktop {
+    .container-cart {
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      justify-content: space-between;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .header__tipbar {
+      ul {
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+      }
+    }
+  }
+  @include mobile {
+    .container-cart {
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      -webkit-justify-content: space-between;
+      align-items: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      height: 100%;
+    }
+
+    .header {
+      &__container {
+        padding: 0 15px;
+      }
+
+      &__logo {
+        width: 50%;
+        // margin-left: -34px;
+        a {
+          font-family: $font-textos;
+          @include rem( 'font-size', 32px);
+          font-weight: 400;
+          color: $black;
+
+          img {
+            float: left;
+          }
+        }
+      }
+
+      &__tipbar {
+        width: 40%;
+        // margin-top: 28px;
+        ul {
+          li {
+            margin-right: 0;
+
+            &:before {
+              left: -34px;
+            }
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+              display: none;
+            }
+
+            &:nth-child(4) {
+              display: inline-block;
+              margin-right: 0;
+
+              &:before {
+                content: '';
+                @include sprite-background( 'icon-lock-white');
+                left: 97px;
+                top: -1px;
+              }
+
+              span {
+                margin-top: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

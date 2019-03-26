@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+
+<head>
+    <vtex:template id="PARCEIROPET - includes-header" />
+    <!-- header e footer checkout -->
+    <link rel="stylesheet" href="/arquivos/parceiro-pet-checkout.css?v=322222" />
+</head>
+<body>
+    <div id="global">
+        <vtex:template id="PARCEIROPET - header-checkout" />
+        <div class="tabs u-center">
+            <ul class="tabs__controls">
+                <li class="tabs__controls--item" data-target="account">Minha Conta</li>
+                <li class="tabs__controls--item" data-target="orders">Meus Pedidos</li>
+                <li class="tabs__controls--item" data-target="signature">Assinatura</li>
+            </ul>
+            <a href="/no-cache/user/logout" class="logout desktop-only">Sair</a>
+            <div class="tabs__wrapper">
+                <div class="tabs__item account">
+                    <div class="tabs__item--user-info">
+                        <vtex.cmc:accountUserProfile />
+                    </div>
+                    <div class="tabs__item--address">
+                        <vtex.cmc:accountAddress/>
+                    </div>
+                </div>
+                <div class="tabs__item orders">
+                    <vtex.cmc:orderList/>
+                </div>
+                <div id="react-app" class="tabs__item signature">
+                </div>
+            </div>
+            <a href="/no-cache/user/logout" class="logout mobile-only">Sair</a>
+        </div>
+        <vtex:template id="PARCEIROPET - footer-checkout" />
+    </div>
+    <script src="/arquivos/react.js"></script>
+    <vtex:template id="PARCEIROPET - includes-scripts" />
+</body>
+</html>

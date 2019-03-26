@@ -1,0 +1,62 @@
+.brands {
+  .filters {
+    &__nav-options {
+      display: inline-block !important;
+      width: auto;
+      padding: 10px 30px;
+      font-weight: 600;
+      margin: 10px 10px 10px 0;
+      border: 1px solid #000;
+      &.active {
+        background: #1AA7B7;
+        color: #fff;
+      }
+      &:hover {
+        background: #1AA7B7;
+        opacity: 0.5;
+        color: #fff;
+      }
+    }
+  }
+  .page-title {
+    font-size: 38px;
+    border-bottom: 1px solid #000;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    color: #000;
+  }
+  .brand__title {
+    padding: 20px 0;
+    border-bottom: 1px solid #000;
+    font-size: 28px;
+    color: #000;
+  }
+  .brand__item {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px 0;
+    margin: 10px 40px 10px 0px;
+  }
+  .brand__list-block {
+    display: none;
+  }
+  .brand__list {
+    margin: 20px 0 40px;
+  }
+}
+@include mobile{
+  .brands{
+    .page-content{
+      padding-bottom: 0px;
+    }
+    .sec-title{
+      padding: 0px 15px;
+    }
+    .filters{
+      padding: 0px 15px;
+    }
+    .brand__wrapper{
+      padding: 0px 15px;
+    }
+  }
+}

@@ -1,0 +1,255 @@
+    // ----------------------
+// == Default Variables
+// ----------------------
+
+$theme-color: #2EBCCF;
+$theme-font: "Lato";
+$logo-path: 'logo.png';
+$img-empty-cart: '/arquivos/empty_cart.png';
+$payment-list: "amex", "elo", "mastercard", "visa", "dinner";
+$stamp-list: "ebit", "clearsale", "site-blindado";
+
+$font-headline: $theme-font;
+$font-nome-produto: $theme-font;
+$font-box-SKU: $theme-font;
+$font-preco-de: $theme-font;
+$font-preco-por: $theme-font;
+$font-parcelas: $theme-font;
+$font-texto-corrido: $theme-font;
+$font-botao-positivo: $theme-font;
+$font-botao-negativo: $theme-font;
+$font-texto-escuro: $theme-font;
+$font-breadcrumb: $theme-font;
+$font-txtbox-placeholder: $theme-font;
+$font-menu: $theme-font;
+$font-texto-negativo: $theme-font;
+$font-link: $theme-font;
+$font-subtitulo: $theme-font;
+
+$color-headline: #47352E;
+$color-headline-inativo: #8c8c8c;
+$color-nome-produto: #000;
+$color-box-SKU: #000;
+$color-preco-de: #999;
+$color-preco-por: $theme-color;
+$color-parcelas: #999;
+$color-texto-corrido: #919191;
+$color-botao-positivo: #fff;
+$color-botao-negativo: #000;
+$color-texto-escuro: #666666;
+$color-breadcrumb: #888;
+$color-txtbox-placeholder: #666;
+$color-menu: #000;
+$color-texto-negativo: #fff;
+$color-link: #2EBCCF;
+$color-subtitulo: #666666;
+$color-flag-default: $theme-color;
+
+$bg-amount-items-cart: $theme-color;
+$bg-picture: true;
+$bg-footer: #2EBCCF;
+$bg-accordion: #f8f8f8;
+
+$menu-type: 'grid'; // list or grid
+
+$border-color: #e5e5e5;
+$flag-outline: $theme-color;
+$default-radius: 0;
+
+// = Color Selection
+// -----------------------------
+
+$selection-color: #fff;
+$selection-background: $theme-color;
+
+// ----------------------
+// == Top Level Paragraph Styles
+// ----------------------
+
+%headline {
+    font-family: $font-headline;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-headline;
+    @include tracking(50);
+}
+%headline-inativo {
+    @extend %headline;
+    color: $color-headline-inativo;
+}
+%headline-title {
+    @extend %headline;
+    @include rem('font-size', 36px);
+    @include mobile {
+        @include rem('font-size', 18px);
+    }
+    @include screen(737px, 1024px) {
+        @include rem('font-size', 30px);
+    }
+}
+%headline-box {
+    @extend %headline;
+    @include rem('font-size', 24px);
+}
+%headline-small {
+    @extend %headline;
+    @include rem('font-size', 16px);
+}
+%headline-small-category {
+    color: $color-breadcrumb;
+    font-family: $font-headline;
+    font-weight: 400;
+    @include rem('font-size', 16px);
+}
+%nome-produto {
+    font-family: $font-nome-produto;
+    font-weight: 400;
+    color: $color-nome-produto;
+    @include rem('font-size', 18px);
+    line-height: 24px;
+}
+%box-SKU {
+    font-family: $font-box-SKU;
+    font-weight: 400;
+    color: $color-box-SKU;
+    @include rem('font-size', 14px);
+    @include tracking(50);
+}
+%preco-de {
+    font-family: $font-preco-de;
+    font-weight: 300;
+    @include rem('font-size', 18px);
+    color: $color-preco-de;
+    text-decoration: line-through;
+    @include screen(737px, 1024px) {
+        @include rem('font-size', 14px);
+    }
+}
+%preco-por {
+    font-family: $font-preco-por;
+    font-weight: 600;
+    @include rem('font-size', 18px);
+    @include tracking(-50);
+    color: $color-preco-por;
+    @include screen(737px, 1024px) {
+        @include rem('font-size', 24px);
+    }
+}
+%produto-esgotado {
+    @extend %preco-por;
+}
+%parcelas {
+    font-family: $font-parcelas;
+    font-weight: 300;
+    @include rem('font-size', 14px);
+    color: $color-parcelas;
+}
+%texto-corrido {
+    font-family: $font-texto-corrido;
+    font-weight: 300;
+    @include rem('font-size', 14px);
+    line-height: 18px;
+    color: $color-texto-corrido;
+}
+%botao-negativo {
+    font-family: $font-botao-negativo;
+    font-weight: 500;
+    @include rem('font-size', 14px);
+    @include tracking(50);
+    text-transform: uppercase;
+    color: $color-botao-negativo;
+}
+%botao-positivo {
+    font-family: $font-botao-positivo;
+    font-weight: 500;
+    @include rem('font-size', 14px);
+    text-transform: uppercase;
+    @include tracking(50);
+    color: $color-botao-positivo;
+}
+%texto-escuro {
+    font-family: $font-texto-escuro;
+    font-weight: 300;
+    @include rem('font-size', 16px);
+    line-height: 24px;
+    color: $color-texto-escuro;
+    @include mobile {
+        @include rem('font-size', 12px);
+        line-height: 18px;
+    }
+}
+// %bread-crumb {
+//     font-family: $font-breadcrumb;
+//     font-weight: 400;
+//     @include rem('font-size', 12px);
+//     @include tracking(50);
+//     color: $color-breadcrumb;
+//     @include mobile {
+//         font-family: $font-botao-positivo;
+//         font-weight: 500;
+//         @include rem('font-size', 12px);
+//         text-transform: uppercase;
+//         @include tracking(50);
+//         color: $color-botao-positivo;
+//     }
+// }
+%txtbox-placeholder {
+    font-family: $font-txtbox-placeholder;
+    font-weight: 400;
+    @include rem('font-size', 12px);
+    color: $color-txtbox-placeholder;
+}
+%menu {
+    font-family: $font-menu;
+    font-weight: 400;
+    @include rem('font-size', 14px);
+    @include tracking(50);
+    color: $color-menu;
+}
+%texto-negativo {
+    font-family: $font-texto-negativo;
+    font-weight: 400;
+    color: $color-texto-negativo;
+}
+%texto-negativo-flag {
+    @extend %texto-negativo;
+    text-transform: uppercase;
+    @include rem('font-size', 11px);
+    @include tracking(50);
+    color: $color-flag-default;
+}
+%texto-negativo-banner {
+    @extend %texto-negativo;
+    text-transform: uppercase;
+    @include rem('font-size', 48px);
+}
+%texto-negativo-banner-texto {
+    @extend %texto-negativo;
+    @include rem('font-size', 24px);
+}
+%link {
+    font-family: $font-link;
+    font-weight: 400;
+    @include rem('font-size', 14px);
+    color: $color-link;
+}
+%subtitulo {
+    font-family: $font-subtitulo;
+    font-weight: 400;
+    color: $color-subtitulo;
+}
+%subtitulo-padrao {
+    @extend %subtitulo;
+    @include rem('font-size', 12px);
+}
+%subtitulo-title {
+    @extend %subtitulo;
+    @include rem('font-size', 18px);
+    text-transform: uppercase;
+}
+
+%center-item {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+}

@@ -1,0 +1,157 @@
+.signature {
+    &__title {
+        font-weight: bold;
+        line-height: 36px;
+        font-size: 36px;
+        text-transform: uppercase;
+        color: #47352E;
+        margin-top: 35px;
+    }
+
+    &__filtres {
+        &-block {
+            margin: 40px 0 55px;
+
+            ul {
+                display: flex;
+                display: -webkit-flex;
+                display: -moz-flex;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+
+                li {
+                    // line-height: 18px;
+                    font-size: 14px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #666666;
+                    border: 1px solid #E0E0E0;
+                    width: 33.33%;
+                    height: 56px;
+                    line-height: 54px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        background-color: $theme-color;
+                        color: $white;
+                        transition: all 0.3s;
+                    }
+
+                    &.signature-active {
+                        border: 1px solid $theme-color;
+                        color: $theme-color;
+                        transition: all 0.3s;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__shelf {
+        &-title {
+            font-weight: bold;
+            line-height: 36px;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #47352E;
+            margin-bottom: 20px;
+        }
+
+        &-content {
+            display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
+            align-items: center;
+        }
+
+        &-sidebar {
+            width: 160px;
+        }
+
+        &-items {
+            width: calc(100% - 160px);
+
+            h2 {
+                display: none;
+            }
+        }
+
+        &-sidebar {
+            line-height: 32px;
+            font-size: 16px;
+            color: #666666;
+        }
+    }
+}
+@include mobile {
+    .signature {
+        &__filtres {
+            &-block {
+                position: relative;
+                &:before {
+                    content: 'Categorias';
+                    border-bottom: 1px solid #E0E0E0;
+                    width: 100%;
+                    display: block;
+                    padding: 0 0 22px;
+                    font-size: 18px;
+                    color: #47352E;
+                }
+
+                &:after {
+                    content: '+';
+                    position: absolute;
+                    top: -2px;
+                    right: 0;
+                    color: #2EBDCD;
+                    font-weight: bold;
+                    font-size: 22px;
+                }
+
+                ul {
+                    flex-direction: column;
+                    -webkit-flex-direction: column;
+                    display: none;
+
+                    li {
+                        width: 100%;
+                        border: none;
+                        border-bottom: 1px solid #E0E0E0;
+                        text-align: left;
+                        text-transform: none;
+                        font-size: 16px;
+                        &.signature-active {
+                            border: none;
+                            border-bottom: 1px solid #2EBCCF;
+                        }
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__shelf {
+            &-title {
+                font-size: 16px;
+                h3 {
+                    color: #47352E;
+                    margin-bottom: 20px;
+                }
+            }
+
+            &-sidebar {
+                ul {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,195 @@
+.giftlist-manage {
+    .l-main__content {
+        padding: 0;
+    }
+
+    .list-manage {
+        &__content {
+            background: url('/arquivos/list-manage-bkg.png') no-repeat;
+            background-size: cover;
+            height: 395px;
+            @include display-flex;
+            @include align-items(center);
+            text-align: center;
+            @include mobile {
+                background: url('/arquivos/list-manage-mobile-bkg.png') no-repeat;
+                background-size: 100%;
+                height: 416px;
+            }
+        }
+    }
+
+    .giftlistmanager {
+        margin-top: 26px;
+    }
+
+    .giftlist {
+        h2 {
+            display: none;
+        }
+
+        &-action {
+            &-create {
+                color: white;
+            }
+        }
+
+        &-manager-message {
+            display: block !important;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        &-table {
+            width: 100%;
+            display: block;
+
+            tbody {
+                width: 100%;
+                display: block;
+
+                tr {
+                    background: $white;
+                    border-radius: 3px;
+                    @include mobile {
+                        width: calc(100% - 40px);
+                        height: 218px;
+                        margin: 0 auto;
+                    }
+
+                    td {
+                        display: inline-flex;
+                        display: -webkit-inline-flex;
+                        @include align-items(center);
+                        @include justify-content(center);
+                        @include mobile {
+                            width: 100%;
+                            @include rem('font-size', 14px);
+                            height: 56px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-header {
+            display: none;
+        }
+
+        &-body {
+            &-name {
+                line-height: 18px;
+                @include rem( 'font-size', 14px);
+                text-align: center;
+                color: $color-texto-escuro;
+                background: #E0E0E0;
+                border-radius: 3px 0 0 3px;
+                // width: 341px;
+                height: 76px;
+                // @include %center-item;
+                width: 32%;
+            }
+
+            &-action {
+                width: 40%;
+                @include mobile {
+                    width: 100%;
+                    display: block;
+                }
+            }
+
+            &-purchased {
+                padding-left: 20px;
+                width: 28%;
+                justify-content: flex-start !important;
+                -webkit-justify-content: flex-start !important;
+                @include mobile {
+                    display: block;
+                    width: 100%;
+                    justify-content: center !important;
+                    -webkit-justify-content: center !important;
+                }
+            }
+
+            &-desired {
+                display: none !important;
+            }
+
+            &-desired,
+            &-purchased {
+                opacity: 0;
+
+                &.loaded {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .glmanager-actions {
+            @include display-flex;
+            width: 100%;
+            @include rem('font-size', 14px);
+            @include mobile {
+                display: inline-block;
+            }
+
+            .action-buy,
+            .action-share {
+                display: none;
+            }
+
+            .action-edit,
+            .action-manage,
+            .action-view {
+                color: $theme-color;
+                width: 28.3333%;
+                transition: all 0.5s;
+                @include rem('font-size', 14px);
+                @include mobile {
+                    width: 33.3333%;
+                    display: inline-block;
+                    margin: 62px 0 36px;
+                    text-align: center;
+                }
+
+                &:hover {
+                    opacity: 0.5;
+                    transition: all 0.5s;
+                }
+            }
+
+            .action-delete {
+                width: 15%;
+                @include mobile {
+                    display: block;
+                    width: 100%;
+                    padding-top: 10px;
+                    border-top: 1px solid #E0E0E0;
+                }
+
+                a {
+                    font-size: 0;
+                    @include sprite-background( 'icon-remove');
+                    display: inline-flex;
+                    display: -webkit-inline-flex;
+                    @include align-items(flex-end);
+                    @include justify-content(center);
+                    margin: 0 20px;
+                    cursor: pointer;
+                    @include mobile {
+                        @include rem('font-size', 14px);
+                        background-image: none;
+                        width: 100%;
+                        margin: 0;
+                        color: $theme-color;
+                        &:after {
+                            content: '';
+                            @include sprite-background( 'icon-remove');
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
